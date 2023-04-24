@@ -5,20 +5,15 @@
                     class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg"
                 >
                     <!--Content -->
-                    <div>
+                    <div class="flex flex-row space-x-4">
                         <button
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             @click="sweetActionTwo"
-                        >
-                            Portão Atendimento
-                        </button>
-
+                        >Portão Atendimento</button>
                         <button
                             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                             @click="sweetActionOne"
-                        >
-                            Portão Ponto de Onibus
-                        </button>
+                        >Portão do Onibus</button>
                     </div>
                     <!--EndContent-->
                 </div>
@@ -44,7 +39,7 @@ export default {
         },
         sweetActionOne() {
             Swal.fire({
-                title: "Cuidado! Você viu a camera?",
+                title: "Conte 3 segundos! pro portão abrir!",
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonText: "Sim",
@@ -53,7 +48,7 @@ export default {
                 if (result.isConfirmed) {
                     // User clicked "Yes"
                     this.sendCallback("A");
-                    Swal.fire("Enviando Sinal", "Portão Esquerdo", "success");
+                   Swal.fire("Espere o portão abrir ou fechar para apertar o ok");
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                     // User clicked "No" or closed the modal
                     Swal.fire(
@@ -66,7 +61,7 @@ export default {
         },
         sweetActionTwo() {
             Swal.fire({
-                title: "Cuidado! Você viu a camera?",
+                title: "Após apertador em 3 segundos pra ele abrir!!",
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonText: "Sim",
@@ -75,7 +70,7 @@ export default {
                 if (result.isConfirmed) {
                     // User clicked "Yes"
                     this.sendCallback("B");
-                    Swal.fire("Enviando Sinal", "Portão Direito", "success");
+                   Swal.fire("Espere o portao abrir para depois abertar ok!");
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                     // User clicked "No" or closed the modal
                     Swal.fire(
